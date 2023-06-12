@@ -8,12 +8,12 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class HorseTest {
     @Test
-    public void Constructor_Should_ThrowException_When_NameIsNull() {
+    public void constructor_Should_ThrowException_When_NameIsNull() {
         assertThrows(IllegalArgumentException.class, () -> new Horse(null, 12, 200));
     }
 
     @Test
-    public void Constructor_ReturnsCorrectMessageInException_When_NameIsNull() {
+    public void constructor_ReturnsCorrectMessageInException_When_NameIsNull() {
         Throwable exception = assertThrows(IllegalArgumentException.class,
                 () -> new Horse(null, 12, 200));
         assertEquals("Name cannot be null.", exception.getMessage());
@@ -21,39 +21,39 @@ class HorseTest {
 
     @ParameterizedTest
     @ValueSource(strings ={"", " ", "\t", "\r", "\n"})
-    public void Constructor_Should_ThrowException_When_NameIsEmpty(String argument) {
+    public void constructor_Should_ThrowException_When_NameIsEmpty(String argument) {
         assertThrows(IllegalArgumentException.class, () -> new Horse(argument, 12, 200));
     }
 
     @ParameterizedTest
     @ValueSource(strings ={"", " ", "\t", "\r", "\n"})
-    public void Constructor_ReturnsCorrectMessageInException_When_NameIsEmpty(String argument) {
+    public void constructor_ReturnsCorrectMessageInException_When_NameIsEmpty(String argument) {
         Throwable exception = assertThrows(IllegalArgumentException.class,
                 () -> new Horse(argument, 12, 200));
         assertEquals("Name cannot be blank.", exception.getMessage());
     }
 
     @Test
-    public void Constructor_Should_ThrowException_When_SpeedIsNegative() {
+    public void constructor_Should_ThrowException_When_SpeedIsNegative() {
         assertThrows(IllegalArgumentException.class,
                 () -> new Horse("Эгоист", -12, 200));
     }
 
     @Test
-    public void Constructor_ReturnsCorrectMessageInException_When_SpeedIsNegative() {
+    public void constructor_ReturnsCorrectMessageInException_When_SpeedIsNegative() {
         Throwable exception = assertThrows(IllegalArgumentException.class,
                 () -> new Horse("Эгоист", -12, 200));
         assertEquals("Speed cannot be negative.", exception.getMessage());
     }
 
     @Test
-    public void Constructor_Should_ThrowException_When_DistanceIsNegative() {
+    public void constructor_Should_ThrowException_When_DistanceIsNegative() {
         assertThrows(IllegalArgumentException.class,
                 () -> new Horse("Эгоист", 12, -200));
     }
 
     @Test
-    public void Constructor_ReturnsCorrectMessageInException_When_DistanceIsNegative() {
+    public void constructor_ReturnsCorrectMessageInException_When_DistanceIsNegative() {
         Throwable exception = assertThrows(IllegalArgumentException.class,
                 () -> new Horse("Эгоист", 12, -200));
         assertEquals("Distance cannot be negative.", exception.getMessage());

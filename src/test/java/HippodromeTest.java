@@ -8,24 +8,24 @@ import static org.junit.jupiter.api.Assertions.*;
 class HippodromeTest {
 
     @Test
-    public void Constructor_Should_ThrowException_When_NameIsNull() {
+    public void constructor_Should_ThrowException_When_NameIsNull() {
         assertThrows(IllegalArgumentException.class, () -> new Hippodrome(null));
     }
 
     @Test
-    public void Constructor_ReturnsCorrectMessageInException_When_NameIsNull() {
+    public void constructor_ReturnsCorrectMessageInException_When_NameIsNull() {
         Throwable exception = assertThrows(IllegalArgumentException.class,
                 () -> new Hippodrome(null));
         assertEquals("Horses cannot be null.", exception.getMessage());
     }
 
     @Test
-    public void Constructor_Should_ThrowException_When_NameIsEmpty() {
+    public void constructor_Should_ThrowException_When_NameIsEmpty() {
         assertThrows(IllegalArgumentException.class, () -> new Hippodrome(new ArrayList<>()));
     }
 
     @Test
-    public void Constructor_ReturnsCorrectMessageInException_When_NameIsEmpty() {
+    public void constructor_ReturnsCorrectMessageInException_When_NameIsEmpty() {
         Throwable exception = assertThrows(IllegalArgumentException.class,
                 () -> new Hippodrome(new ArrayList<>()));
         assertEquals("Horses cannot be empty.", exception.getMessage());
