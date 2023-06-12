@@ -2,7 +2,7 @@
 /out/
 .idea
 target
-*.imlgit add .
+*.iml
 
 # Log file
 *.log
